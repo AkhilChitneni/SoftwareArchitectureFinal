@@ -109,6 +109,9 @@
     <ProjectReference Include="..\FeatureOpsUI\FeatureOpsUI.vcxproj">
       <Project>{a3306c7e-c434-43ef-88b4-fd286c0f4148}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\GenericObserverPattern\GenericObserverPattern.vcxproj">
+      <Project>{47da59a9-c5df-4086-851b-4d741d83c0a3}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\JavaLoader\JavaLoader.vcxproj">
       <Project>{0ac36fab-0407-4c2a-9d3c-df0a704fa2c1}</Project>
     </ProjectReference>

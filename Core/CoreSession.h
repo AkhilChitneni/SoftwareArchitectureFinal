@@ -9,16 +9,16 @@ class Observer;
 class CORE_API CoreSession : ISubject
 {
 	public:
+
+        // data members
         std::string m_message;
         std::list<IObserver*> m_listObserver;
+
+
+        // constructor and destructor
         CoreSession();
-        static CoreSession& GetInstance();
-
-        CoreSession(CoreSession const&) = delete;
-        void operator=(CoreSession const&) = delete;
-
-
         ~CoreSession() override;
+
 
         /**
          * The subscription management methods.
@@ -26,25 +26,8 @@ class CORE_API CoreSession : ISubject
         void Attach(IObserver* observer) override;
         void Detach(IObserver* observer) override;
         void NotifyAll() override;
-        void Notify(IObserver::EventTypes eventType) override;
-        void Notify(IObserver::EventTypes eventType, void* data) override;
-
-        void CreateMessage(IObserver::EventTypes eventType);
-        void CreateMessage(IObserver::EventTypes eventType, void * data);
-        void CreateMessage(std::string message = "Empty");
         void HowManyObserver();
-
         void ClearObservers();
-
-        void SetupDefaultObservers();
-
-private:
-    
-    
-    
-    Observer* m_observerForSavePart; 
-    Observer* m_observerForClosePart;
-    Observer* m_observerForOpenPart;
 
 };
 

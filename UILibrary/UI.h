@@ -1,7 +1,7 @@
 #pragma once
 
 #include "UILIbraryExports.h"
-#include "..\Core\Observer.h"
+#include "..\AppPartOps\PartObserver.h"
 
 
 class UILIBRARY_API UI
@@ -23,7 +23,7 @@ private:
 	void PerformDotnetAutomationWorkflow();
 	void PerformSampleUsingBuilder();
 
-	Observer* observer4;
-	Observer* observer5;
+	PartObserver* observer4;
+	PartObserver* observer5;
 
 };

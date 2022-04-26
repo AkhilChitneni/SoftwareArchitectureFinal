@@ -9,7 +9,9 @@ public:
         SavePart =0,
         OpenPart =1,
         ClosePart =2,
-        CreatePart =4
+        CreatePart =4,
+        DrawInk =5,
+        EraseInk = 6
     };
 
     virtual ~IObserver() {};

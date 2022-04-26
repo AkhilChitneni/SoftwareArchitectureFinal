@@ -102,6 +102,9 @@
     <ProjectReference Include="..\AppPartOps\AppPartOps.vcxproj">
       <Project>{407e33af-2ab5-40c2-8caa-33d1e07cc437}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\GenericObserverPattern\GenericObserverPattern.vcxproj">
+      <Project>{47da59a9-c5df-4086-851b-4d741d83c0a3}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

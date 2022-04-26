@@ -7,8 +7,8 @@
 #include "..\Core\GuidObject.h"
 #include "..\AppLibrary\Feature.h"
 #include "..\Core\StringUtils.h"
-#include "..\Core\CoreSession.h"
-#include "..\Core\Observer.h"
+#include "../GenericObserverPattern/TopLevelSession.h"
+#include "PartObserver.h"
 
 using namespace std;
 
@@ -27,7 +27,7 @@ void Application::PartFile::ClosePart()
 	partOpsNotifierData.partName = this->m_partFilePath;
 	PartOpsNotifierData* ptr = &partOpsNotifierData;
 
-	CoreSession::GetInstance().CreateMessage(Observer::ClosePart, (void*)ptr);
+	TopLevelSession::GetInstance().CreateMessage(PartObserver::ClosePart, (void*)ptr);
 }
 
 void Application::PartFile::SavePart()
@@ -39,7 +39,7 @@ void Application::PartFile::SavePart()
 	partOpsNotifierData.partName = this->m_partFilePath;
 	PartOpsNotifierData* ptr = &partOpsNotifierData;
 
-	CoreSession::GetInstance().CreateMessage(Observer::SavePart, (void*)ptr);
+	TopLevelSession::GetInstance().CreateMessage(PartObserver::SavePart, (void*)ptr);
 }
 
 void Application::PartFile::MakeWidgetFeature(bool option1, int values)
@@ -59,7 +59,7 @@ Application::PartFile* Application::PartFile::CreatePartFile(std::string partFil
 	partOpsNotifierData.partName = partFilePath;
 	PartOpsNotifierData* ptr = &partOpsNotifierData;
 
-	CoreSession::GetInstance().CreateMessage(Observer::CreatePart, (void*)ptr);
+	TopLevelSession::GetInstance().CreateMessage(PartObserver::CreatePart, (void*)ptr);
 	return partFile;
 }
 
@@ -78,7 +78,7 @@ Application::PartFile* Application::PartFile::OpenPartFile(std::string partFileP
 	partOpsNotifierData.partName = partFilePath;
 	PartOpsNotifierData* ptr = &partOpsNotifierData;
 
-	CoreSession::GetInstance().CreateMessage(Observer::OpenPart, (void*)ptr);
+	TopLevelSession::GetInstance().CreateMessage(PartObserver::OpenPart, (void*)ptr);
 
 	return partFile;
 }

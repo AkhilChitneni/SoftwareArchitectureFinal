@@ -4,21 +4,21 @@
 #include "framework.h"
 #include "Core.h"
 #include <iostream>
-#include "CoreSession.h"
+//#include "..\GenericObserverPattern\TopLevelSession.h"
 
-static CoreSession* m_coreSession = nullptr;
+//static CoreSession* m_coreSession = nullptr;
 
 CORE_API int initializeProduct(void)
 {
 	std::cout << "Product Core is Initialized" << std::endl;
-	CoreSession::GetInstance();
+	//TopLevelSession::GetInstance();
 	return 0;
 }
 
 CORE_API int shutdownProduct(void)
 {
 	std::cout << "Product Core is Shutdown" << std::endl;
-	CoreSession::GetInstance().ClearObservers();
+	//TopLevelSession::GetInstance().ClearObservers();
 	return 0;
 }
 
